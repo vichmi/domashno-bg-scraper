@@ -83,12 +83,14 @@ if exact_unit == '0':
         tree = html.fromstring(result.content)
         problems = tree.xpath('//*[@id="problems"]/ul/li/a/text()')
         if not os.path.exists(f'./units/{books_text[int(book)]}/{unit}'): os.makedirs(f'./units/{books_text[int(book)]}/{unit}')
+        time.sleep(15)
         for problem in problems:
             exercise = s.get(f'https://domashno.bg/zadacha?p={subject}&k={classes[int(grade_index)]}&i={books_href[int(book)]}&u={unit}&z={problem}', headers=HEADERS)
             if exercise.status_code == 200:
                 f = open(f'./units/{books_text[int(book)]}/{unit}/Problem {problem}.jpg', 'wb')
                 f.write(exercise.content)
                 f.close()
+                time.sleep(20)
 else:
     unit = input('Type the number of the unit')
     result = s.get(f'https://domashno.bg/{subject}/{classes[int(grade_index)]}/{books_href[int(book)]}/uroci/{unit}/zadachi')
