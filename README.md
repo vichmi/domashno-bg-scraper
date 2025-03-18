@@ -1,7 +1,7 @@
 # Domashno-bg-scraper
 
 ## What is Domashno.bg scraper
-Scraping the solutions of math problems from [domashno.bg](https://domashno.bg/). \
+Scraping the solutions of math problems from [domashno.bg](https://domashno.bg/).
 
 ## Main Idea
 I wanted to scrape every single problem they have uploaded from a single subscriptions or the least possible.
